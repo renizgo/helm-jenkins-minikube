@@ -50,5 +50,19 @@ Copy Minikube executable to path:
 sudo mv minikube /usr/local/bin
 ```
 
-For another versions Operational System verify this oficial link. [Oficial Link](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+For another versions Operational System verify this [Oficial Link.](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+
+For verify installation:
+
+```
+minikube version
+minikube version: v1.1.0
+```
+
+Start a minikube version:
+
+```
+minikube start --kubernetes-version=v1.14.0
+```
+
 
