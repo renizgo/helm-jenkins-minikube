@@ -9,6 +9,7 @@ This install is will be in Kubernetes Environment using Minikube System
 
 * Git clone in this repository
 * Uninstall previous Minikube version
+* Install teh last version Minikube 
 * Kubectl command installed
 * 
 
@@ -23,6 +24,31 @@ cd helm-jenkins-minikube
 
 ```
 chmod +x minikube_uninstall.sh
+./minikube_uninstall.sh
 ```
 ![Image01](https://raw.githubusercontent.com/renizgo/helm-jenkins-minikube/master/images/image01.png)
+Image01
+
+### Install the last minikube version
+
+In MacOS user is very simple installation using brew:
+
+```
+brew cask install minikube
+```
+
+You can also install it on MacOS by download a static binary:
+
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 \
+  && chmod +x minikube
+```
+
+Copy Minikube executable to path:
+
+```
+sudo mv minikube /usr/local/bin
+```
+
+For another versions Operational System verify this oficial link. [Oficial Link](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
