@@ -100,7 +100,7 @@ kubectl version
 
 For installation in others operational systems see [Oficial Link](https://helm.sh/docs/using_helm/#installing-helm)
 
-1. Download you [desired versio](https://github.com/helm/helm/releases);
+1. Download you [desired version](https://github.com/helm/helm/releases);
 
 2. In this example:
 ```
@@ -213,3 +213,22 @@ Access your environment:
 
 ![Image04](https://raw.githubusercontent.com/renizgo/helm-jenkins-minikube/master/images/image04.png)
 Image04
+
+Create a simple Pipeline for example
+
+```
+node {
+    stage('Hello') {
+        sh '''
+        echo 'hello world'
+        '''
+    }    
+}
+```
+
+Configurar no agente
+always pull image
+Environment DIND=true
+Privileged=true
+Install plugin Pipeline
+
