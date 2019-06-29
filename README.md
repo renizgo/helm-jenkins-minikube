@@ -221,15 +221,7 @@ node {
     stage('Hello') {
         sh '''
         echo 'hello world'
-        docker ps
         '''
     }    
 }
 ```
-
-Configurar no agente
-always pull image
-Environment DIND=true
-Privileged=true
-Install plugin Pipeline
-

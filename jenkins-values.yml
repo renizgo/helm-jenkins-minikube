@@ -49,13 +49,16 @@ master:
   HostName: jenkins.dev.easynvest.io
 agent:
   enabled: true
-  image: renizgo/jnlp-slave
-  imageTag: latest
-  CustomJenkinsLabels: []
-# ImagePullSecret: jenkins
+  image: docker
+  imageTag: 18.06.1-ce-dind
+  customJenkinsLabels: [pod-dind]
+  alwaysPullImage: true
   imagePullPolicy: Always
-  Component: "jenkins-slave"
-  Privileged: true
+  componentName: "pod-dind"
+  sideContainerName: "dind"
+  privileged: true
+  TTYEnabled: true
+  podName: "dind"
   resources:
     requests:
       cpu: "500m"
