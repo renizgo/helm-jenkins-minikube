@@ -214,14 +214,31 @@ Access your environment:
 ![Image04](https://raw.githubusercontent.com/renizgo/helm-jenkins-minikube/master/images/image04.png)
 Image04
 
-Create a simple Pipeline for example
+### Obs: Remove args on Container Template in Manage Jenkins
+
+![Image12](https://raw.githubusercontent.com/renizgo/helm-jenkins-minikube/master/images/image12.png)
+Image12
+
+
+### Create a simple Pipeline for example
 
 ```
-node {
-    stage('Hello') {
-        sh '''
-        echo 'hello world'
-        '''
-    }    
-}
-```
+podTemplate(){
+    node('pod-dind') {
+        container('dind') {
+
+            stage('Build My Docker Image') { 
+                sh 'docker info'
+
+                sh 'touch Dockerfile'
+                sh 'echo "FROM centos:7" > Dockerfile'
+                
+                sh "cat Dockerfile" 
+    
+                sh "docker -v" 
+                sh "docker info" 
+                sh "docker build -t my-centos:1 ." 
+            } 
+        }
+    }
+}```
